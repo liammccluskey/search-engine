@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom'
 
+import { updateThemeColor, updateTintColor } from '../../../../redux/theme'
 import { DropdownMenu } from '../../common/DropdownMenu'
 import { Themes, Tints } from '../../../../redux/theme'
 import { Tooltip } from '../../common/Tooltip'
@@ -17,15 +17,13 @@ export const MainMenuComponent = props => {
 
         ...rest
     } = props
-    const navigate = useNavigate()
-
 
     const onClickThemeColor = themeColor => {
-        //props.patchUserThemeColor(themeColor)
+        props.updateThemeColor(themeColor)
     }
 
     const onClickTintColor = tintColor => {
-       // props.patchUserTintColor(tintColor)
+       props.updateTintColor(tintColor)
     }
 
     return (
@@ -34,7 +32,7 @@ export const MainMenuComponent = props => {
             menuHidden={menuHidden}
             setMenuHidden={setMenuHidden}
             triggerElement={
-                <Icon className='bi-grid grid-icon' />
+                <Icon className={`bi-grid grid-icon ${!menuHidden && 'active'}`} />
             }
             triggerHeight={35}
             menuElement={
@@ -94,7 +92,11 @@ export const MainMenuComponent = props => {
 }
 
 const Icon = styled.i`
-    font-size: 20px;
+    font-size: 25px;
+    color: ${p => p.theme.textMain};
+    &.active {
+        color: ${p => p.theme.tint};
+    }
 `
 
 const MenuContainer = styled.div`
@@ -133,7 +135,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-
+    updateThemeColor,
+    updateTintColor
 }, dispatch)
 
 export const MainMenu = connect(mapStateToProps, mapDispatchToProps)(MainMenuComponent)

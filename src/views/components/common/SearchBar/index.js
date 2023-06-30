@@ -30,7 +30,7 @@ const Root = styled.form`
     justify-content: flex-start;
     align-items: center;
     border: 1px solid ${p => p.theme.bc};
-    border-radius: 5px;
+    border-radius: 20px;
     width: 300px;
     padding-left: 10px;
     box-sizing: border-box;

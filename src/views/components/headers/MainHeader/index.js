@@ -26,11 +26,9 @@ export const MainHeaderComponent = props => {
                     height={35}
                     width={35}
                 />
-                {props.isMobile ? null :
-                    <h3 className='logo-text'>
-                        E-Search
-                    </h3>
-                }
+                <h3 className='logo-text'>
+                    E-Search
+                </h3>
             </div>
             <MainMenu
                 menuHidden={mainMenuHidden}
