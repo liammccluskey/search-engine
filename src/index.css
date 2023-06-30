@@ -1,13 +1,191 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap'); /* duolingoesque */
+
+/* test fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
+
+/*global config & reset*/
+* {
+  margin: 0px 0px;
+  padding: 0px 0px;
+  
+  font-family: var(--font-family);
+  /* font-family: 'Mulish'; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0px 0px;
+  background-color: var(--bgc);
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6, .h7 {
+  font-weight: 400;
+  color: var(--color-header);
+
+}
+h3 {
+  font-size: 19px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 13px;
+}
+h6 {
+  font-size: 12px;
+}
+.h7 {
+  font-size: 10px;
+}
+p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+}
+th {
+  font-size: 14px;
+}
+
+:root {
+  /* dynamic */
+  --ps-mainheader: 3%;
+  --ps-subheader: 12%;
+  --ps-body: 12%;
+  --bgc: white;
+  --bgc-nav: white;
+
+  /* constants */
+  --h-mainheader: 70px;
+  --h-subheader: 60px;
+  --h-subheader-with-links: 93px;
+  --br-container: 10px;
+  --duration-animation: 0.2s;
+  --duration-animation-medium: 0.5s;
+  --duration-animation-long: 2s;
+  --font-family: 'Nunito Sans', sans-serif; 
+}
+
+@media only screen and (max-width: 800px) {
+  :root {
+    /* dynamic */
+    --ps-mainheader: 3%;
+    --ps-subheader: 5%;
+    --ps-body: 5%;
+  }
+}
+
+/* properties */
+
+.d-flex {
+  display: flex;
+}
+
+.f-1 {
+  flex: 1;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.jc-space-between {
+  justify-content: space-between !important;
+}
+
+.jc-flex-start {
+  justify-content: flex-start;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-flex-start {
+  align-items: flex-start;
+}
+
+.ai-flex-end {
+  align-items: flex-end;
+}
+
+.ai-stretch {
+  align-items: stretch;
+}
+
+.as-center {
+  align-self: center;
+}
+
+.as-flex-start {
+  align-self: flex-start;
+}
+
+.as-flex-end {
+  align-self: flex-end;
+}
+
+.as-stretch {
+  align-self: stretch;
+}
+
+.fw-xs {
+  font-weight: 300;
+}
+
+.fw-s {
+  font-weight: 400;
+}
+
+.fw-m {
+  font-weight: 600;
+}
+
+.fw-l {
+  font-weight: 700;
+}
+
+.fw-xl {
+  font-weight: 800;
+}
+
+/* classes */
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.clickable {
+  cursor: pointer;
 }
